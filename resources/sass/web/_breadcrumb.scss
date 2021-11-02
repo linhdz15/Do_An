@@ -1,0 +1,21 @@
+/*[ Bread crumb ]*/
+.breadcrumb-item {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.breadcrumb-item+.breadcrumb-item::before {
+    content: "»";
+    color: #999;
+}
+
+a.breadcrumb-item:hover {
+    color: #fc3f00;
+}
+
+.breadcrumb-item {
+    float: left;
+}

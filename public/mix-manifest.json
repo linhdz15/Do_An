@@ -1,0 +1,12 @@
+{
+    "/js/web/main.js": "/js/web/main.js",
+    "/js/web/exam.js": "/js/web/exam.js",
+    "/js/web/start-exam.js": "/js/web/start-exam.js",
+    "/js/admin/main.js": "/js/admin/main.js",
+    "/js/guest.js": "/js/guest.js",
+    "/css/guest.css": "/css/guest.css",
+    "/css/admin/main.css": "/css/admin/main.css",
+    "/css/web/start-exam.css": "/css/web/start-exam.css",
+    "/css/web/exam.css": "/css/web/exam.css",
+    "/css/web/main.css": "/css/web/main.css"
+}
