@@ -255,8 +255,8 @@ $(function() {
     /*--------------------- Scroll to -------------------*/
 
 
-    const URL_IOS = 'https://apps.apple.com/us/app/vietjack/id1490262941';
-    const URL_ANDROID = 'https://play.google.com/store/apps/details?id=com.jsmile.android.vietjack';
+    const URL_IOS = '';
+    const URL_ANDROID = '';
 
     $('.js-download_app').on('click', function(event) {
         event.preventDefault();

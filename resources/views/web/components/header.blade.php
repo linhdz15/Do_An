@@ -22,10 +22,10 @@
                         <a href="" class="left-topbar-item" data-toggle="modal" data-target="#loginModal">
                             <i class="fas fa-sign-in-alt"></i> Log in
                         </a>
-                        <a target="_blank" class="branch-item" href="https://www.facebook.com/hoc.cung.vietjack">
+                        <a target="_blank" class="branch-item" href="https://www.facebook.com/linhdz15">
                             <span class="fab fa-facebook-f"></span>
                         </a>
-                        <a target="_blank" class="branch-item" href="https://www.youtube.com/c/HọccùngVietJack/featured">
+                        <a target="_blank" class="branch-item" href="https://www.youtube.com/">
                             <span class="fab fa-youtube"></span>
                         </a>
                     </div>
@@ -78,10 +78,10 @@
                             </a>
                 </li>
                 <li class="right-topbar text-center">
-                    <a target="_blank" href="https://www.facebook.com/hoc.cung.vietjack">
+                    <a target="_blank" href="https://www.facebook.com/linhdz15">
                         <span class="fab fa-facebook-f"></span>
                     </a>
-                    <a target="_blank" href="https://www.youtube.com/c/HọccùngVietJack/featured">
+                    <a target="_blank" href="https://www.youtube.com/">
                         <span class="fab fa-youtube"></span>
                     </a>
                 </li>

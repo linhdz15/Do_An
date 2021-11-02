@@ -20,66 +20,64 @@
 
 @section('og_type', 'object')
 
-<x-web-layout>
-    <div class="main-page">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    @include('web.components.filter-exam')
-                </div>
-                <div class="col-md-12">
-                    <div class="bg0 main-subject m-b-20">
-                        <div class="main-subject__list">
-                            @foreach($subjects as $sub)
-                                <a href="{{ route('exam-by-grade-subject', [$grade, $sub]) }}" class="subject-item {{ $sub->id == $subject->id ? 'active' : '' }}">
-                                    <span class="item-wrapper">
-                                        <img src="{{ asset(config('web.subjects.' . $sub->slug . '.icon')) }}" class="subject-item__image mr-2">
-                                        <span class="subject-item__name {{ $sub->slug }}">{{ $sub->title }}</span>
-                                    </span>
-                                </a>
-                            @endforeach
-                        </div>
+@extends('layouts.web')
+@section('content')
+<div class="main-page">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="bg0 main-subject m-b-20">
+                    <div class="main-subject__list">
+                        @foreach($subjects as $sub)
+                            <a href="{{ route('exam-by-grade-subject', [$grade, $sub]) }}" class="subject-item {{ $sub->id == $subject->id ? 'active' : '' }}">
+                                <span class="item-wrapper">
+                                    <img src="{{ asset(config('web.subjects.' . $sub->slug . '.icon')) }}" class="subject-item__image mr-2">
+                                    <span class="subject-item__name {{ $sub->slug }}">{{ $sub->title }}</span>
+                                </span>
+                            </a>
+                        @endforeach
                     </div>
                 </div>
-                <div class="col-md-12">
-                    <div class="list-exam m-b-20">
-                        <h3 class="title-exam text-uppercase">Luyện bài tập - đề thi môn {{ $subject->title . ' ' . $grade->title }} </h3>
-                        <div class="exams-content">
-                            <div class="row">
-                                @if (!empty($chapters))
-                                    @php
-                                        $midNumber = intval($chapters->count() / 2);
-                                        $chaptersChunk = $midNumber > 0 ? $chapters->splice($midNumber) : collect([]);
-                                        $colClass = $chaptersChunk->isEmpty() ? 'col-lg-12' : 'col-lg-6';
-                                    @endphp
+            </div>
+            <div class="col-md-12">
+                <div class="list-exam m-b-20">
+                    <h3 class="title-exam text-uppercase">Luyện bài tập - đề thi môn {{ $subject->title . ' ' . $grade->title }} </h3>
+                    <div class="exams-content">
+                        <div class="row">
+                            @if (!empty($chapters))
+                                @php
+                                    $midNumber = intval($chapters->count() / 2);
+                                    $chaptersChunk = $midNumber > 0 ? $chapters->splice($midNumber) : collect([]);
+                                    $colClass = $chaptersChunk->isEmpty() ? 'col-lg-12' : 'col-lg-6';
+                                @endphp
 
+                                <div class="col-12 col-md-12 {{ $colClass }}">
+                                    @include('web.exams.partials.tree-exams-list', ['chapters' => $chapters])
+                                </div>
+
+                                @if ($chaptersChunk->isNotEmpty())
                                     <div class="col-12 col-md-12 {{ $colClass }}">
-                                        @include('web.exams.partials.tree-exams-list', ['chapters' => $chapters])
-                                    </div>
-
-                                    @if ($chaptersChunk->isNotEmpty())
-                                        <div class="col-12 col-md-12 {{ $colClass }}">
-                                            @include('web.exams.partials.tree-exams-list', ['chapters' => $chaptersChunk, 'isChunk' => true])
-                                        </div>
-                                    @endif
-                                @elseif (!empty($exams))
-                                    <div class="col-12 col-md-12 col-lg-12">
-                                        @include('web.exams.partials.exams-list')
-                                    </div>
-                                @else
-                                    <div class="col-12 col-md-12 col-lg-12">
-                                        <div class="bg0 p-rl-20 p-tb-20">
-                                            <p>
-                                                Đang cập nhật ...
-                                            </p>
-                                        </div>
+                                        @include('web.exams.partials.tree-exams-list', ['chapters' => $chaptersChunk, 'isChunk' => true])
                                     </div>
                                 @endif
-                            </div>
+                            @elseif (!empty($exams))
+                                <div class="col-12 col-md-12 col-lg-12">
+                                    @include('web.exams.partials.exams-list')
+                                </div>
+                            @else
+                                <div class="col-12 col-md-12 col-lg-12">
+                                    <div class="bg0 p-rl-20 p-tb-20">
+                                        <p>
+                                            Đang cập nhật ...
+                                        </p>
+                                    </div>
+                                </div>
+                            @endif
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</x-web-layout>
+</div>
+@endsection

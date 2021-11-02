@@ -30,7 +30,7 @@
         @include('admin.components.header')
         @include('admin.components.sidebar')
         <div class="wrapper-content">
-            {{ $slot }}
+            @yield('content')
             @include('admin.components.footer')
         </div>
         @stack('modals')

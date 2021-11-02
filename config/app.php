@@ -14,6 +14,10 @@ return [
     */
 
     'name' => env('APP_NAME', 'Laravel'),
+    'site_name' => env('SITE_NAME', ''),
+    'description' => env('APP_DESCRIPTION', ''),
+    'keywords' => env('APP_KEYWORDS', ''),
+    'fb_app_id' => env('FACEBOOK_CLIENT_ID', ''),
 
     /*
     |--------------------------------------------------------------------------
@@ -55,6 +59,8 @@ return [
     'url' => env('APP_URL', 'http://localhost'),
 
     'asset_url' => env('ASSET_URL', null),
+    
+    'prefix_admin_url' => env('PREFIX_ADMIN_URL', 'admin'),
 
     /*
     |--------------------------------------------------------------------------
@@ -82,7 +88,7 @@ return [
     |
     */
 
-    'locale' => 'vi',
+    'locale' => 'vn',
 
     /*
     |--------------------------------------------------------------------------
@@ -181,6 +187,7 @@ return [
         Collective\Html\HtmlServiceProvider::class,
         Jenssegers\Agent\AgentServiceProvider::class,
         App\Providers\ViewServiceProvider::class,
+        Laravel\Socialite\SocialiteServiceProvider::class,
 
     ],
 
@@ -239,6 +246,7 @@ return [
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
         'Agent' => Jenssegers\Agent\Facades\Agent::class,
+        'Socialite' => Laravel\Socialite\Facades\Socialite::class,
 
     ],
 

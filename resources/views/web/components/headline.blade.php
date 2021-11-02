@@ -8,7 +8,7 @@
                 @foreach($examTrendings as $examTrending)
                     <span class="trending-item">
                         <span class="dis-inline-block">
-                            <a href="#" class="f1-s-2 cl3 hov-cl10 trans-03">
+                            <a href="{{ route('exam.show', [$examTrending->slug, $examTrending->id]) }}" class="f1-s-2 cl3 hov-cl10 trans-03">
                                 <i class="far fa-newspaper"></i>&nbsp;&nbsp;
                                 <span class="exam-title">
                                     {{ $examTrending->title }}

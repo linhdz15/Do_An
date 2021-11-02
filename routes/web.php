@@ -24,6 +24,23 @@ Route::group(['namespace' => 'Web'], function() {
         Route::get('{grade:slug}/{subject:slug}/{chapter:slug}/{lesson:slug}', 'CourseController@examByGradeSubjectChapterLesson')
             ->name('exam-by-grade-subject-chapter-lesson');
     });
+
+    Route::get('kiem-tra-thi-thu/{slug}/{curriculumId?}', 'CourseController@examShow')
+        ->name('exam.show');
+
+    Route::middleware(['auth:sanctum', 'verified'])->group(function () {
+        Route::get('luyen-thi/de-{curriculum:id}/{slug?}', 'CourseController@startExam')
+            ->name('exam.start');
+
+         Route::post('test/{test}/send-answer', 'TestController@sendAnswer')
+        ->name('test.sendanswer');
+
+        Route::post('test/{test}/submit', 'TestController@submitTest')
+            ->name('test.submit');
+        Route::get('ket-qua-thi/{test}', 'TestController@testResult')
+            ->name('test.result');
+    });
+
     Route::get('cau-hoi', 'QuestionController@index')
         ->name('question.index');
     Route::get('cau-hoi/{question:id}/{slug?}', 'QuestionController@show')

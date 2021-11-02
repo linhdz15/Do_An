@@ -1,5 +1,3 @@
-@extends('layouts.web-simple')
-
 @php
     $title = 'Thi thử ' . $curriculum->title;
     $description = 'Hệ thống sẽ giúp bạn xác định chính xác kiến thức bị hổng để tập trung đào sâu, từ cơ bản đến nâng cao, có hướng dẫn giải chi tiết bao gồm tất các môn Toán, Ngữ văn, Tiếng anh, Vật lý, Hóa học, Sinh học, Lịch sử, Địa lý, Giáo dục công dân...';
@@ -11,14 +9,7 @@
 @section('og_description', $description)
 @section('og_type', 'object')
 
-@push('styles')
-    <link rel="stylesheet" href="{{ mix('css/web/start-exam.css') }}" type="text/css">
-@endpush
-
-@push('scripts')
-    <script src="{{ mix('js/web/start-exam.js') }}" type="text/javascript"></script>
-@endpush
-
+@extends('layouts.exam')
 @section('content')
     <main id="app">
         <div class="wrapper">

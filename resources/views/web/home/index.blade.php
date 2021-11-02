@@ -7,7 +7,7 @@
             @foreach($grades as $grade)
                 <div class="col-lg-6 col-md-12">
                     <div class="info-box">
-                        <a href="#" title="{{ config('web.grades.' . $grade->slug . '.description') ?? '' }}">
+                        <a href="{{ route('exam-by-grade', $grade) }}" title="{{ config('web.grades.' . $grade->slug . '.description') ?? '' }}">
                             <div class="info-box-body">
                                 <div class="info-box-icon" style="background-color: {{ config('web.grades.' . $grade->slug . '.background') }};">
                                     {{ config('web.grades.' . $grade->slug . '.icon_text') }}

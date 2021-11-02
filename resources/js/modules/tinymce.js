@@ -411,7 +411,7 @@ tinymce.init({
                     const { data } = res;
 
                     if (data.uploaded) {
-                        callback(data.url, { alt: 'Tài liệu VietJack' });
+                        callback(data.url, { alt: 'Tài liệu Thi Online' });
                     } else {
                         alert(data.error.message);
                     }

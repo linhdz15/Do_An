@@ -10,7 +10,8 @@
 @section('og_description', $description)
 @section('og_type', 'article')
 
-<x-web-layout>
+@extends('layouts.exam')
+@section('content')
     <div class="box-wrapper page-question">
         <div class="container">
             <div class="row main-qa">
@@ -95,12 +96,12 @@
                             <p>
                                 <a class="link-title_qa" class="has-underline" href="https://m.me/377846149262767?ref=tieuhoc" target="_blank">
                                     <img alt="" src="{{ asset('images/hot.png') }}" class="exam-icon_qa">
-                                    Đồng giá 250k 1 khóa học lớp 3-12 bất kỳ tại VietJack. Đăng ký ngay!
+                                    Đồng giá 250k 1 khóa học lớp 3-12 bất kỳ tại Thi Online. Đăng ký ngay!
                                 </a>
                             </p>
                             <p>
                                 <a class="link-title_qa js-download_app" href="javascript:;">
-                                    <img alt="" src="{{ asset('images/icon_vj_sm.png') }}" class="exam-icon_qa"> Thi online trên app VietJack. Tải ngay!
+                                    <img alt="" src="{{ asset('images/icon_vj_sm.png') }}" class="exam-icon_qa"> Thi online trên app Thionline. Tải ngay!
                                 </a>
                             </p>
                         </div>
@@ -220,7 +221,7 @@
                     @endif
 
                     <div class="m-t-15 text-center">
-                        <a class="tart_test btn-block" href="https://hoidapvietjack.com/" target="_blank">
+                        <a class="tart_test btn-block" href="#" target="_blank">
                             <i class="fas fa-question-circle"></i>
                             Hỏi bài
                         </a>
@@ -288,4 +289,4 @@
             </div>
         </div>
     </div>
-</x-web-layout>
+@endsection
