@@ -25,7 +25,7 @@
     <link rel="stylesheet" href="{{ mix('css/web/main.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('libs/select2/dist/css/select2.min.css') }}" />
     <link rel="stylesheet" href="{{ mix('css/web/exam.css') }}" type="text/css">
-        <!-- Global site tag (gtag.js) - Google Analytics -->
+
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-QRSBGLTE3N"></script>
     <script>
         window.dataLayer = window.dataLayer || [];

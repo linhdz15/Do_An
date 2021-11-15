@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\Auth\FacebookController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -54,3 +54,8 @@ Route::group(['prefix' => '/suggest'], function () {
     Route::get('lessons', 'SuggestController@lessons')->name('suggest.lessons');
     Route::get('users', 'SuggestController@users')->name('suggest.users');
 });
+
+Route::get('/login', 'LoginController@getLogin')->name('login');
+Route::get('/register', 'LoginController@getRegister')->name('register');
+
+Route::post('dang-xuat', 'Auth\LogoutController')->name('custom.logout');

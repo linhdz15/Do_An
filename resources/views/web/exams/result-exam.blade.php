@@ -9,7 +9,8 @@
 @section('og_description', $description)
 @section('og_type', 'object')
 
-<x-web-layout>
+@extends('layouts.web')
+@section('content')
     <div class="box-wrapper">
         <div class="container">
             <div class="headline bg0 flex-wr-sb-c m-tb-10">
@@ -181,4 +182,4 @@
             </div>
         </div>
     </div>
-</x-web-layout>
+@endsection

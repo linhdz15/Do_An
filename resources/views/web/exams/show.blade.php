@@ -9,8 +9,7 @@
 @section('og_description', $description)
 @section('og_type', 'object')
 
-@extends('layouts.exam')
-@section('content')
+<x-web-layout>
 <div class="box-wrapper container-fluid">
     <div class="content-wrapper {{ $chapters->count() > 0 ? '' : 'unsidebar'}}">
         @if ($chapters->count() > 0)
@@ -256,4 +255,4 @@
     </div>
     <div class="sidebar-overlay"></div>
 </div>
-@endsection
+</x-web-layout>

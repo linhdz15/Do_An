@@ -13,6 +13,6 @@ class WebLayout extends Component
      */
     public function render()
     {
-        return view('layouts.web');
+        return view('layouts.web1');
     }
 }

@@ -2,8 +2,9 @@
 
 namespace App\Providers;
 
+use App\Models\ConnectedAccount;
+use App\Policies\ConnectedAccountPolicy;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
-use Illuminate\Support\Facades\Gate;
 
 class AuthServiceProvider extends ServiceProvider
 {
@@ -13,7 +14,13 @@ class AuthServiceProvider extends ServiceProvider
      * @var array
      */
     protected $policies = [
-        // 'App\Models\Model' => 'App\Policies\ModelPolicy',
+        ConnectedAccount::class => ConnectedAccountPolicy::class,
+        Course::class => CoursePolicy::class,
+        Question::class => QuestionPolicy::class,
+        Test::class => TestPolicy::class,
+        User::class => UserPolicy::class,
+        Grade::class => GradePolicy::class,
+        Subject::class => SubjectPolicy::class
     ];
 
     /**

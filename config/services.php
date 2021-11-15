@@ -31,9 +31,15 @@ return [
     ],
 
     'facebook' => [
-        'client_id' => '59775245345277084316',
-        'client_secret' => '8789b6972c62b3335sdse43dec615a73f9d2',
-        'redirect' => '',
+        'client_id' => env('FACEBOOK_CLIENT_ID'),
+        'client_secret' => env('FACEBOOK_CLIENT_SECRET'),
+        'redirect' => env('FACEBOOK_REDIRECT'), // e.g. 'https://your-domain.com/oauth/{provider}/callback'
+    ],
+
+    'google' => [
+        'client_id' => env('GOOGLE_CLIENT_ID'),
+        'client_secret' => env('GOOGLE_CLIENT_SECRET'),
+        'redirect' => env('GOOGLE_REDIRECT'), // e.g. 'https://your-domain.com/oauth/{provider}/callback'
     ],
 
 ];

@@ -30,7 +30,7 @@
         @include('admin.components.header')
         @include('admin.components.sidebar')
         <div class="wrapper-content">
-            @yield('content')
+            {{ $slot }}
             @include('admin.components.footer')
         </div>
         @stack('modals')
@@ -51,7 +51,7 @@
         <!-- custome template js -->
         <script src="{{ asset('adminux/js/adminux.js') }}" type="text/javascript"></script>
         <script src="{{ mix('js/admin/main.js') }}" type="text/javascript"></script>
-        <script src="{{ mix('editor/tinymce.js') }}"></script>
+
         
         <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
         <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
