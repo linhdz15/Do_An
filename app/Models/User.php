@@ -41,6 +41,7 @@ class User extends BaseModel implements
     const NORMAL_USER = 0;
     const ADMIN = 1;
     const EDITOR = 2;
+    const ACTIVE = 1;
 
     const ROLE_TEXT = [
         self::NORMAL_USER => 'Người dùng',

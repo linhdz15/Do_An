@@ -179,7 +179,7 @@ class CourseController extends BaseController
             'subjects' => $subjects,
             'exams' => $exams,
         ]);
-    } 
+    }
 
     public function examShow($slug, $curriculumId = null)
     {

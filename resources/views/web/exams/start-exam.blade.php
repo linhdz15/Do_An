@@ -1,7 +1,7 @@
 @extends('layouts.web-simple')
 
 @php
-    $title = 'Thi thử ' . $curriculum->title;
+    $title = $curriculum->title;
     $description = 'Hệ thống sẽ giúp bạn xác định chính xác kiến thức bị hổng để tập trung đào sâu, từ cơ bản đến nâng cao, có hướng dẫn giải chi tiết bao gồm tất các môn Toán, Ngữ văn, Tiếng anh, Vật lý, Hóa học, Sinh học, Lịch sử, Địa lý, Giáo dục công dân...';
 @endphp
 
@@ -93,7 +93,7 @@
                     >Trả lời</button>
                     <button type="button" class="btn btn-info mx-auto" id="next-question">Câu tiếp theo</button>
                 </nav>
-                
+
                 <div class="content-body">
                     <div class="quiz-wrapper bg-white rounded">
                         @foreach ($curriculum->questions as $key => $question)
@@ -118,7 +118,7 @@
                                 </div>
                                 <div class="reason js-reason-{{ $question->id }}">
                                 </div>
-                            </div> 
+                            </div>
                         @endforeach
                     </div>
                 </div>

@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Auth\FacebookController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -32,7 +31,7 @@ Route::group(['namespace' => 'Web'], function() {
         Route::get('luyen-thi/de-{curriculum:id}/{slug?}', 'CourseController@startExam')
             ->name('exam.start');
 
-         Route::post('test/{test}/send-answer', 'TestController@sendAnswer')
+        Route::post('test/{test}/send-answer', 'TestController@sendAnswer')
         ->name('test.sendanswer');
 
         Route::post('test/{test}/submit', 'TestController@submitTest')
@@ -55,7 +54,7 @@ Route::group(['prefix' => '/suggest'], function () {
     Route::get('users', 'SuggestController@users')->name('suggest.users');
 });
 
-Route::get('/login', 'LoginController@getLogin')->name('login');
-Route::get('/register', 'LoginController@getRegister')->name('register');
+Route::get('/login', 'Auth\LoginController@getLogin')->name('login');
+Route::get('/register', 'Auth\LoginController@getRegister')->name('register');
 
 Route::post('dang-xuat', 'Auth\LogoutController')->name('custom.logout');
